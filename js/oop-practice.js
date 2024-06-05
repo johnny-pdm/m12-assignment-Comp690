@@ -85,5 +85,21 @@ animalPrivate.speak();
 
 // STEP 9
 
+String.prototype.findWords = function(word) {
 
+    word = word.toLocaleLowerCase();
+    let counter = 0;
+    let _paragraph = this.valueOf().toLocaleLowerCase().split(' ');
+    _paragraph.forEach( currentWord => {
+        if(currentWord == word){
+            counter++;
+        }
+    });
+    
+    window.alert(`The word ${ word } has been found ${ counter }`);
+}
+
+let paragraph = "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog";
+
+paragraph.findWords('fox');
 
